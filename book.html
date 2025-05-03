@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Form - Colorado Tanzania Safaris</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f0fdf4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen p-6">
+  <header class="bg-green-700 text-white p-4">
+    <div class="container mx-auto">
+      <h1 class="text-xl font-bold">Colorado Tanzania Safaris</h1>
+    </div>
+  </header>
+  
+  <section class="max-w-4xl mx-auto p-6 bg-white rounded-2xl shadow-lg mt-10">
+    <h2 class="text-2xl font-bold text-center text-green-700 mb-6">Book Your Safari with Colorado Tanzania Safaris</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+      <!-- Personal Info -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block font-medium mb-1">Full Name</label>
+          <input type="text" name="name" required class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Email Address</label>
+          <input type="email" name="email" required class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Phone Number</label>
+          <input type="tel" name="phone" required class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Country of Residence</label>
+          <input type="text" name="country" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+        </div>
+      </div>
+      <!-- Safari Info -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block font-medium mb-1">Preferred Safari Start Date</label>
+          <input type="date" name="start_date" required class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Number of Travelers</label>
+          <input type="number" name="group_size" min="1" required class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Safari Duration (days)</label>
+          <input type="number" name="duration" min="1" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Type of Safari</label>
+          <select name="safari_type" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+            <option value="private">Private Safari</option>
+            <option value="group">Group Safari</option>
+            <option value="luxury">Luxury Safari</option>
+            <option value="budget">Budget Safari</option>
+            <option value="honeymoon">Honeymoon Safari</option>
+          </select>
+        </div>
+      </div>
+      <!-- Destinations -->
+      <div>
+        <label class="block font-medium mb-1">Preferred Destinations</label>
+        <select name="destinations[]" multiple class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300">
+          <option value="serengeti">Serengeti National Park</option>
+          <option value="ngorongoro">Ngorongoro Crater</option>
+          <option value="manyara">Lake Manyara</option>
+          <option value="tarangire">Tarangire National Park</option>
+          <option value="ruaha">Ruaha National Park</option>
+          <option value="selous">Selous Game Reserve</option>
+          <option value="lake_natron">Lake Natron & Oldoinyo Lengai</option>
+          <option value="arusha">Arusha National Park</option>
+          <option value="cultural">Cultural Tours (Maasai, Hadzabe, Chagga)</option>
+        </select>
+        <small class="text-gray-500">Hold Ctrl (Windows) or Command (Mac) to select multiple.</small>
+      </div>
+      <!-- Add-ons -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block font-medium mb-1">Do You Need Airport Pickup?</label>
+          <select name="airport_pickup" class="w-full border rounded-lg px-4 py-2">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-medium mb-1">Hotel Preference (if any)</label>
+          <input type="text" name="hotel" class="w-full border rounded-lg px-4 py-2">
+        </div>
+      </div>
+      <!-- Special Requests -->
+      <div>
+        <label class="block font-medium mb-1">Special Requests / Notes</label>
+        <textarea name="special_requests" rows="4" class="w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-green-300"></textarea>
+      </div>
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-xl hover:bg-green-800 transition">
+          Submit Booking Request
+        </button>
+      </div>
+    </form>
+  </section>
+</body>
+</html>

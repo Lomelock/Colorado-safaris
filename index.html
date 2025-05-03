@@ -84,8 +84,11 @@
     
 
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMG-20250429-WA0007.jpg') no-repeat center center/cover; 
-      height: 500px; /* increased height from 300px to 400px for enhanced appearance */
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('IMG-20250429-WA0007.jpg') no-repeat center;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.85);
+      height: 600px; /* increased height from 300px to 400px for enhanced appearance */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -265,22 +268,23 @@ color: #ffffff; /* White text for better contrast on dark gradients */
 
 .slides {
   width: 100%;
-  animation:slide animation 05s infinite;
+  animation: slideAnimation 10s ease-in-out infinite;
   transform: translateX(0%);
 }
 
+.slides:hover {
+  animation-play-state: paused;
+}
+
+/* Updated rule to show one slide at a time */
 .slides img {
-  width: 100%;
+  flex: 0 0 100%; /* each image occupies full slider width */
   object-fit: contain;
 }
 
 @keyframes slideAnimation {
-  0% { transform: translateX(0%); }
-  33% { transform: translateX(0%); }
-  36% { transform: translateX(-100%); }
-  66% { transform: translateX(-100%); }
-  70% { transform: translateX(-200%); }
-  100% { transform: translateX(-200%); }
+  0%, 45% { transform: translateX(0%); }
+  55%, 100% { transform: translateX(-100%); }
 }
 /* ...existing code... */
     .itinerary-btn {
@@ -325,6 +329,54 @@ color: #ffffff; /* White text for better contrast on dark gradients */
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
+
+/* Custom Featured Slider Styles - Updated */
+.featured-slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px; /* set a fixed height */
+  margin: 40px auto;
+}
+.featured-slider .slide-container {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+.featured-slider .slide {
+  min-width: 100%;
+  height: 100%;
+  display: none;
+  position: relative;
+}
+.featured-slider .slide.active {
+  display: block;
+}
+.featured-slider .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover the container */
+  display: block;
+  margin: 0 auto;
+}
+.featured-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+.featured-slider .prev-slide {
+  left: 10px;
+}
+.featured-slider .next-slide {
+  right: 10px;
+}
   </style>
 </head>
 <body>
@@ -348,7 +400,7 @@ color: #ffffff; /* White text for better contrast on dark gradients */
 <a href="#tours">Safaris</a>
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
-<a href="#book">Book Now</a>
+<a href="book.html">Book Now</a>
 
 </nav>
 
@@ -366,11 +418,21 @@ color: #ffffff; /* White text for better contrast on dark gradients */
 <p>Embark on an unforgettable journey through Tanzania's breathtaking landscapes with Colorado Tanzania Safaris. Whether you're chasing the Big Five across the Serengeti, standing on the rim of Ngorongoro Crater, or crafting a custom adventure, <br>we turn your dream safari into reality. Let the wild welcome you.</p>
 </div>
 </section>
-<!-- Insert this slider section after the hero section -->
-<section class="slider">
-  <div class="slides">
-    <img src="IMG-20250316-WA0018.jpg" alt="Slide 1">
-    <img src="IMG-20250316-WA0035.jpg" alt="Slide 2">
+<!-- New Slider Section -->
+<section class="featured-slider">
+  <div class="slide-container">
+    <div class="slide active">
+      <img src="pexels-followalice-667200.jpg" alt="Featured Slide 1">
+    </div>
+    <div class="slide">
+      <img src="IMG-20250316-WA0018.jpg" alt="Featured Slide 2">
+    </div>
+    <div class="slide">
+      <img src="Arusha city.jpg" alt="Featured Slide 3">
+    </div>
+    <div class="slide">
+      <img src="Screenshot (49).png" alt="Featured Slide 4">
+    </div>
   </div>
 </section>
 
@@ -1043,6 +1105,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 3000);
   });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.featured-slider .slide');
+  const totalSlides = slides.length;
+  
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % totalSlides;
+    showSlide(slideIndex);
+  }
+
+  setInterval(nextSlide, 5000); // Change slide every 5 seconds
 });
 </script>
 </body>
