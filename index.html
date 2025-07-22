@@ -408,7 +408,7 @@ color: #ffffff; /* White text for better contrast on dark gradients */
 
     <section id="meet-colorado" style="padding: 2rem; max-width: 900px; margin: auto; font-family: Arial, sans-serif; line-height: 1.6;">
   <h2 style="text-align: center; font-size: 2rem; color: #c1440e;">Meet Colorado – A Young Maasai with a Dream as Big as a Mountain</h2>
-  <img src="IMG-20250429-WA0005.jpg" alt="Colorado" style="float: right; max-width: 40%; margin: 0 0 1em 1em;">
+  <img src="1000000618.jpg" alt="Colorado" style="float: right; max-width: 40%; margin: 0 0 1em 1em;">
   <p>
     The word <strong>"Colorado"</strong> refers to a <em>great mountain</em> in the United States — a symbol of strength, height, and boundless dreams.
     Here in Tanzania, <strong>"Colorado"</strong> is the name I go by — a nickname that represents who I am:
@@ -768,15 +768,24 @@ color: #ffffff; /* White text for better contrast on dark gradients */
         </p>
         
         <h3>Maasai Cultural Experiences</h3>
-        <p>
-          The iconic Maasai people are known for their deep-rooted traditions, distinctive red garments, and pastoral lifestyle. A visit to a Maasai boma (village) offers insight into their unique architecture, social structure, dance, and rituals. Engage with elders and warriors, watch traditional singing and jumping dances, and learn how the Maasai live in harmony with nature. These encounters are respectful and educational, emphasizing cultural exchange and preservation.
-        </p>
+        <img src="1000000623.jpg" alt="Maasai warriors" style="max-width:40%;margin:0 1em 1em 0;">
+<img src="pexels-followalice-667200.jpg" alt="Maasai dance" style="max-width:40%;margin:0 0 1em 1em;">
+<p>
+  The iconic Maasai people are known for their deep-rooted traditions, distinctive red garments, and pastoral lifestyle. A visit to a Maasai boma (village) offers insight into their unique architecture, social structure, dance, and rituals. Engage with elders and warriors, watch traditional singing and jumping dances, and learn how the Maasai live in harmony with nature. These encounters are respectful and educational, emphasizing cultural exchange and preservation.
+</p>
+<div style="width:100%;text-align:center;margin:2em 0;">
+  <img src="1000000629.jpg" alt="Maasai Tribe Large" style="width:80%;max-width:800px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.15);">
+</div>
         
         <h3>Indigenous Tribes: Hadzabe & Datoga</h3>
-        <p>
-          In the Lake Eyasi region, visitors can meet the Hadzabe—one of Africa’s last remaining hunter-gatherer tribes. Join them on a morning hunt using handmade bows and arrows, or gather wild tubers and fruits. The experience is raw and unfiltered, providing a rare window into a disappearing way of life. Nearby, the Datoga people are skilled blacksmiths and cattle herders who use traditional tools and forge weapons from recycled metals. These cultural visits are both humbling and unforgettable.
-        </p>
-        
+        <img src="KILIAN-WEB-COTENTS-2_html_m73c1ba76.jpg" alt="Hadzabe hunter-gatherers" style="max-width:40%;margin:0 1em 1em 0;">
+<img src="nationalgeographic.jpg" alt="Datoga blacksmithing" style="max-width:40%;margin:0 0 1em 1em;">
+<p>
+  In the Lake Eyasi region, visitors can meet the Hadzabe—one of Africa’s last remaining hunter-gatherer tribes. Join them on a morning hunt using handmade bows and arrows, or gather wild tubers and fruits. The experience is raw and unfiltered, providing a rare window into a disappearing way of life. Nearby, the Datoga people are skilled blacksmiths and cattle herders who use traditional tools and forge weapons from recycled metals. These cultural visits are both humbling and unforgettable.
+</p>
+<div style="width:100%;text-align:center;margin:2em 0;">
+  <img src="Hadza_montage.png" alt="Hadzabe Tribe Large" style="width:80%;max-width:800px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.15);">
+</div>
         <h3>Cultural Activities You Can Experience:</h3>
         <ul>
           <li>Join a traditional dance ceremony with the Maasai or Chagga</li>
@@ -795,9 +804,9 @@ color: #ffffff; /* White text for better contrast on dark gradients */
       
       <div class="destination-slider">
         <div class="slider">
-          <img src="pexels-kureng-workx-2546437-13241987.jpg" alt="Maasai cultural dance">
+          <img src="1000000623.jpg" alt="Maasai cultural dance">
           <img src="pexels-jonathan-john-1035705388-30629419.jpg" alt="Chagga coffee plantation">
-          <img src="pexels-valerie-sutton-34163824-11679893.jpg" alt="Hadzabe hunter-gatherers">
+          <img src="1000000645.jpg" alt="Hadzabe hunter-gatherers">
           <img src="pexels-followalice-667200.jpg" alt="Datoga blacksmithing">
           <img src="pexels-followalice-667203.jpg" alt="Tanzanian local market">
         </div>
@@ -873,6 +882,23 @@ color: #ffffff; /* White text for better contrast on dark gradients */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   scroll-snap-align: start;
+}
+
+.culture-bg {
+  position: relative;
+  background: 
+    linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+    url('1000000636.jpg') center/cover no-repeat,
+    url('1000000623.jpg') right/contain no-repeat;
+  /* First image covers, second image overlays on right side */
+}
+@media (max-width: 700px) {
+  .culture-bg {
+    background: 
+      linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+      url('1000000623.jpg') center/cover no-repeat;
+    /* Use only one image for mobile for clarity */
+  }
 }
 </style>
 
