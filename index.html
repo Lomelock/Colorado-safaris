@@ -380,6 +380,43 @@ color: #ffffff; /* White text for better contrast on dark gradients */
 .featured-slider .next-slide {
   right: 10px;
 }
+    /* Meet Colorado responsive styles */
+    .meet-colorado .meet-inner {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .meet-colorado .meet-text {
+      flex: 1 1 420px;
+      min-width: 260px;
+    }
+    .meet-colorado .meet-image {
+      flex: 0 0 340px;
+      max-width: 40%;
+    }
+    .meet-colorado .meet-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      display: block;
+    }
+    .meet-colorado h2 {
+      color: #c1440e;
+      margin-top: 0;
+    }
+    .meet-colorado .meet-cta { margin-top: 18px; }
+    @media (max-width: 700px) {
+      .meet-colorado .meet-inner { flex-direction: column-reverse; padding: 0 10px; }
+      .meet-colorado .meet-image { max-width: 100%; flex-basis: 100%; }
+      .meet-colorado .meet-text { flex-basis: 100%; }
+      .meet-colorado h2 { font-size: 1.4rem; text-align: center; }
+      .meet-colorado p { font-size: 0.98rem; }
+      .meet-colorado .meet-cta { text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -418,49 +455,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 
-    <section id="meet-colorado" style="padding: 2rem; max-width: 900px; margin: auto; font-family: Arial, sans-serif; line-height: 1.6;">
-  <h2 style="text-align: center; font-size: 2rem; color: #c1440e;">Meet Colorado – A Young Maasai with a Dream as Big as a Mountain</h2>
-  <img src="1000000618.jpg" alt="Colorado" style="float: right; max-width: 40%; margin: 0 0 1em 1em;">
-  <p>
-    The word <strong>"Colorado"</strong> refers to a <em>great mountain</em> in the United States — a symbol of strength, height, and boundless dreams.
-    Here in Tanzania, <strong>"Colorado"</strong> is the name I go by — a nickname that represents who I am:
-    <strong>a young Maasai man</strong> from a traditional community, carrying dreams as big as that mountain.
-  </p>
-  <p>
-    In my Maasai culture, <strong>wealth is traditionally measured by the number of livestock</strong> a person owns.
-    Education is often seen as something distant or less valuable. But I believed in something different.
-    I believed that <strong>education could change lives</strong>, and I chose a new path.
-  </p>
-  <p>
-    In <strong>2014</strong>, I took a leap and began studying <strong>Tourism</strong>. It was a journey of dedication, hope, and purpose.
-    After graduating, I began working in the tourism industry — guiding travelers from around the world,
-    interpreting culture, and becoming a bridge between our rich traditions and the modern world.
-  </p>
-  <p>
-    Today, I’ve founded my own company — <strong>Colorado Tanzania Safaris</strong> — not just as a business, but as a mission:
-    to share the natural beauty of Tanzania, the richness of the Maasai culture, and the power of education.
-  </p>
-  <p>
-    I call myself <strong>Colorado</strong> because my dreams are <strong>as high as a mountain</strong>,
-    as strong as our traditions, and as expansive as the wild landscapes I guide visitors through.
-  </p>
-
-  <h3 style="color: #c1440e;">My Mission</h3>
-  <ul>
-    <li>Offering high-quality, authentic safari experiences</li>
-    <li>Honoring and sharing Maasai culture with respect and depth</li>
-    <li>Inspiring youth, women, and children from my community to believe in education</li>
-    <li>Being a living example of how education can transform lives</li>
-  </ul>
-
-  <p style="margin-top: 2rem;"><strong>Welcome to my journey — a journey of tourism, transformation, and hope.</strong></p>
-
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="#contact" style="padding: 0.75rem 1.5rem; background-color: #c1440e; color: white; text-decoration: none; border-radius: 5px;">
-      Book a Safari
-    </a>
-  </div>
-</section>
+    <section id="meet-colorado" class="section meet-colorado">
+      <div class="meet-inner">
+        <div class="meet-text">
+          <h2>Meet Colorado — A Young Maasai with a Dream as Big as a Mountain</h2>
+          <p>
+            Colorado is one of the mountain states in the United States. It is home to the tallest peak of the Rocky Mountains – Mount Elbert.
+            The mountains are a central part in Colorado’s identity and reflect a rich blend of natural history, cultural heritage and modern values to indigenous people and modern residents.
+            It is a place of inspiration and spiritual renewal. Climbing the mountains are seen as a metaphor for growth.
+          </p>
+          <p>
+            I go by the nickname of Colorado because as a young Maasai man from a traditional community I carry this same identity of reflection cultural heritage and modern growth.
+            I have the Maasai spirituality but I have dreams as big as the Rocky mountains. In my culture wealth is traditionally measured by the number of livestock someone owns.
+            Education is often seen as something distant or less valuable. However, I believed in something different. I believed that education could change lives, and I chose a new path of studying tourism and starting my own company.
+          </p>
+          <div class="meet-cta">
+            <a href="#contact" class="itinerary-btn">Book a Safari</a>
+          </div>
+        </div>
+        <div class="meet-image">
+          <img src="1000000618.jpg" alt="Colorado">
+        </div>
+      </div>
+    </section>
 
 <!-- New Slider Section -->
 <section class="featured-slider">
@@ -506,29 +523,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2>Why Choose Colorado Tanzania Safaris</h2>
         <div class="why-choose-us-list">
       <div class="reason">
-        <h3>Authentic Local Expertise</h3>
+        <div class="reason-head"><span class="reason-icon">🧭</span><h3>Authentic Local Expertise</h3></div>
         <p>Our team includes experienced Tanzanians and Maasai guides who bring deep knowledge of the land, wildlife, and culture.</p>
       </div>
       <div class="reason">
-        <h3>Tailored Adventures</h3>
+        <div class="reason-head"><span class="reason-icon">🎯</span><h3>Tailored Adventures</h3></div>
         <p>Every safari is customized to fit your interests and travel style — no two experiences are ever the same.</p>
       </div>
       <div class="reason">
-        <h3>Comfort Meets Adventure</h3>
+        <div class="reason-head"><span class="reason-icon">🚙</span><h3>Comfort Meets Adventure</h3></div>
         <p>Enjoy thrilling wildlife encounters while staying in comfortable lodges and traveling in well-maintained safari vehicles.</p>
       </div>
       <div class="reason">
-        <h3>Cultural Immersion</h3>
+        <div class="reason-head"><span class="reason-icon">🎭</span><h3>Cultural Immersion</h3></div>
         <p>Interact with local communities, witness traditional ceremonies, and experience the real heart of Tanzania.</p>
       </div>
       <div class="reason">
-        <h3>Sustainable Travel</h3>
+        <div class="reason-head"><span class="reason-icon">🌱</span><h3>Sustainable Travel</h3></div>
         <p>Your journey supports local conservation efforts, jobs, and ethical tourism practices that protect Tanzania's beauty.</p>
       </div>
       <div class="reason">
-        <h3>Trusted and Safe</h3>
+        <div class="reason-head"><span class="reason-icon">🛡️</span><h3>Trusted & Safe</h3></div>
         <p>We are fully licensed, experienced, and committed to providing secure, worry-free safaris from start to finish.</p>
       </div>
+    </div>
+    <div class="why-choose-cta">
+      <a href="book.html" class="itinerary-btn">Book with Colorado</a>
     </div>
   </section>
 
@@ -961,6 +981,87 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     /* Use only one image for mobile for clarity */
   }
 }
+/* Destination slider navigation buttons */
+.destination-slider { position: relative; }
+.destination-slider .dest-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+}
+.destination-slider .dest-nav-btn.prev { left: 8px; }
+.destination-slider .dest-nav-btn.next { right: 8px; }
+.destination-slider .dest-nav-btn:focus { outline: 2px solid rgba(255,140,0,0.8); }
+.destination-slider .slider { scroll-behavior: smooth; }
+
+    /* Why Choose Us - responsive cards */
+    .why-choose-us-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 20px;
+    }
+
+    .why-choose-us-list .reason {
+      background: #fff;
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      border-left: 5px solid var(--accent-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .reason-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .reason-icon {
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .why-choose-us-list .reason h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--accent-color);
+    }
+
+    .why-choose-us-list .reason p {
+      margin: 0.4rem 0 0 0;
+      color: #444;
+      line-height: 1.5;
+      flex: 1 1 auto;
+    }
+
+    .why-choose-cta { text-align: center; margin-top: 18px; }
+
+    @media (max-width: 520px) {
+      .reason-icon { width: 40px; height: 40px; font-size: 1.05rem; }
+    }
 </style>
 
 
